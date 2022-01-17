@@ -45,3 +45,11 @@ button {
 button:hover {
   background: rgb(0, 87, 185);
 }
+
+#alert-div {
+  width: 70%;
+  margin-left: 5%;
+  color: white;
+  padding: 1.5rem;
+  background: rgba(248, 102, 102, 0.753);
+}
