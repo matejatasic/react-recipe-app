@@ -19,8 +19,21 @@ function App() {
     }
     else {
       $.get(`https://api.edamam.com/api/recipes/v2?q=${search}&app_key=${process.env.REACT_APP_API_KEY}&type=public&app_id=${process.env.REACT_APP_API_ID}`, (data) => {
-        setRecipes(data.hits);
+        if(data.hits.length === 0) {
+          $('#alert').html(`
+            <div id="alert-div">No results for this search!</div>
+          `);
+        
+          setTimeout(() => {
+            $('#alert').html('');  
+          }, 5000);
+        }
+        else {
+          setRecipes(data.hits);
+        }
       });
+
+      setSearch('');
     }
   }
 
@@ -29,10 +42,10 @@ function App() {
       <h1>Recipe App</h1>
       <div className="search-bar">
           <div id="alert"></div>
-          <input type="text" id="search" placeholder="Type in a recipe..." onChange={(e) => setSearch(e.target.value)} />
+          <input type="text" id="search" placeholder="Type in a recipe..." onChange={(e) => setSearch(e.target.value)} value={search}/>
           <button onClick={() => handleSearch()}>Search</button>
       </div>
-      <RecipeList />
+      <RecipeList recipes={recipes} />
     </div>
   );
 }
