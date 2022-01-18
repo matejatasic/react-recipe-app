@@ -9,6 +9,7 @@
 
 body {
   background: linear-gradient(120deg, rgb(0, 171, 250) 0%, rgb(126, 214, 255) 100%);
+  min-height: 100vh;
 }
 
 h1 {
@@ -52,4 +53,43 @@ button:hover {
   color: white;
   padding: 1.5rem;
   background: rgba(248, 102, 102, 0.753);
+}
+
+#recipe-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.recipe-card {
+  font-family: 'Heebo';
+  width: 30%;
+  background: rgb(216, 214, 214);
+  margin: 1rem;
+  padding: 0.8rem;
+}
+
+.recipe-card  > * {
+  margin: 1rem 0;
+}
+
+h3 {
+  text-align: center;
+}
+
+h4 {
+  text-align: center;
+}
+
+img {
+  width: 60%;
+  margin: 0.5rem 20% !important;
+}
+
+ul > * {
+  margin: 0.5rem 0;
+}
+
+li {
+  list-style-position: inside;
 }
