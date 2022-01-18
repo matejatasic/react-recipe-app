@@ -20,7 +20,7 @@ h1 {
 }
 
 .search-bar {
-  width: 60%;
+  width: 65%;
   margin: 2rem auto;
 }
 
@@ -63,7 +63,7 @@ button:hover {
 
 .recipe-card {
   font-family: 'Heebo';
-  width: 30%;
+  width: 29%;
   background: rgb(216, 214, 214);
   margin: 1rem;
   padding: 0.8rem;
@@ -93,3 +93,25 @@ ul > * {
 li {
   list-style-position: inside;
 }
+
+@media only screen and (max-width: 768px) {
+  input {
+    width: 50%;
+  }
+  .recipe-card {
+    width: 44%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  input {
+    margin-right: 2rem;
+  }
+  .recipe-card {
+    width: 65%;
+    margin: 1rem auto;
+  }
+  .search-bar {
+    width: 100%;
+  }
+} 
